@@ -1,0 +1,70 @@
+﻿<Window x:Class="KMS1_Kropf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KMS1_Kropf"
+        mc:Ignorable="d"
+        Title="GoldIsMoney-Bank" 
+        Height="700" 
+        Width="500"
+        Background="BlanchedAlmond"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="WindowMouseDown"
+        >
+
+    <Grid>
+
+        <Label Content="Kundenliste:" 
+               Margin="10" 
+               FontSize="20" 
+               FontFamily="Adobe Gothic Std B"
+               Background="Cornsilk"/>
+        
+        
+        
+        <ListView HorizontalAlignment="Left" 
+                  Height="600" 
+                  Margin="15,50,0,0" 
+                  VerticalAlignment="Top" 
+                  Name="myListView"
+                  SelectionChanged="myListView_SelectionChanged">
+
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="Kunden-ID" 
+                                    DisplayMemberBinding="{Binding ID}" 
+                                    Width="140"/>
+
+                    <GridViewColumn Header="Name" 
+                                    DisplayMemberBinding="{Binding Name}" 
+                                    Width="140"/>
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        
+
+        <Button x:Name="readBtn" 
+                Click="readBtn_Click" 
+                Content="Bank-Daten Einlesen" 
+                HorizontalAlignment="Right" 
+                Margin="0,50,20,0" 
+                VerticalAlignment="Top" 
+                Height="30" 
+                Width="130"/>
+        
+        <Button x:Name="detailBtn" 
+                Click="detailBtn_Click" 
+                Content="Details" 
+                HorizontalAlignment="Right" 
+                Margin="20,100,20,0" 
+                VerticalAlignment="Top" 
+                Height="30"  
+                Width="130" 
+                IsEnabled="False"/>
+        
+    </Grid>
+</Window>

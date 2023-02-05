@@ -1,0 +1,146 @@
+﻿<Window x:Class="KMS1_Kropf.AccountWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KMS1_Kropf"
+        mc:Ignorable="d"
+        Title="AccountWindow" 
+        Height="500" 
+        Width="800"
+        Background="AliceBlue"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="WindowMouseDown"
+        Closing="Window_Closing"
+        >
+    <Grid>
+        
+<!-- Labels for displaying data -->
+        
+        <Label Name="headLabel" 
+               Content="" 
+               Margin="10" 
+               FontSize="14" 
+               FontFamily="Adobe Gothic Std B" 
+               Background="#FFDDECF1"/>
+        
+        <Label Name="bLabel" 
+               Content="Konto-Stand: " 
+               FontSize="18" 
+               Margin="-200,400,10,10" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontFamily="Adobe Gothic Std B"/>
+
+        <Label Name="balanceLabel" 
+               Content="" 
+               FontSize="18" 
+               Width="160" 
+               Margin="75,405,10,10" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontStyle="Italic"/>
+
+        <Label Content="Kontoeingang:" 
+               Margin="-210,5,10,10" 
+               FontSize="16" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top"/>
+
+        <Label Content="Kontoausgang:" 
+               Margin="-210,205,10,10" 
+               FontSize="16" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top"/>
+
+<!-- ListViews -->        
+        
+        <ListView HorizontalAlignment="Left" 
+                  Height="300" 
+                  Margin="20,70,0,0" 
+                  VerticalAlignment="Center" 
+                  Name="listViewIBAN" 
+                  SelectionChanged="listViewIBAN_SelectionChanged">
+
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="IBAN" 
+                                    Width="170"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        
+
+        <ListView HorizontalAlignment="Center" 
+                  Height="150" 
+                  Margin="20,42,-140,0" 
+                  VerticalAlignment="Top" 
+                  Name="listViewSending">
+
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="Kontonummer" 
+                                    DisplayMemberBinding="{Binding accNumber}" 
+                                    Width="170"/>
+
+                    <GridViewColumn Header="Verwendungszweck" 
+                                    DisplayMemberBinding="{Binding purpose}" 
+                                    Width="120"/>
+
+                    <GridViewColumn Header="Betrag" 
+                                    DisplayMemberBinding="{Binding amount}" 
+                                    Width="100"/>
+
+                    <GridViewColumn Header="Datum" 
+                                    DisplayMemberBinding="{Binding date}" 
+                                    Width = "90"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        
+        <ListView HorizontalAlignment="Center" 
+                  Height="150" 
+                  Margin="20,240,-140,0" 
+                  VerticalAlignment="Top" 
+                  Name="listViewRecieving">
+
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="Kontonummer" 
+                                    DisplayMemberBinding="{Binding accNumber}" 
+                                    Width="170"/>
+
+                    <GridViewColumn Header="Verwendungszweck" 
+                                    DisplayMemberBinding="{Binding purpose}" 
+                                    Width="120"/>
+
+                    <GridViewColumn Header="Betrag" 
+                                    DisplayMemberBinding="{Binding amount}" 
+                                    Width="100"/>
+
+                    <GridViewColumn Header="Datum" 
+                                    DisplayMemberBinding="{Binding date}" 
+                                    Width = "90"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+<!-- Button -->        
+        
+        <Button x:Name="saveBtn" 
+                Content="Konto-Details Abspeichern" 
+                HorizontalAlignment="Right" 
+                Margin="0,410,75,0" 
+                VerticalAlignment="Top" 
+                Height="30" 
+                Width="150" 
+                Click="saveBtn_Click"
+                IsEnabled="False"/>
+    </Grid>
+</Window>

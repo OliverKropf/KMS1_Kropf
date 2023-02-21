@@ -95,9 +95,9 @@ namespace KMS1_Kropf
         private void detailBtn_Click(object sender, RoutedEventArgs e)
         {
             Customer selectedItem = (Customer)myListView.SelectedItem;
-            AccountWindow aWindow = new AccountWindow("Konto-ID: " + selectedItem.ID + "\n" + "Name: " + selectedItem.Name,
+            AccountWindow accWindow = new AccountWindow("Konto-ID: " + selectedItem.ID + "\n" + "Name: " + selectedItem.Name,
                                                       this, accountSortedDict, selectedItem.ID, dataTransferArray);
-            aWindow.Show();
+            accWindow.Show();
             this.Hide();
         }
 

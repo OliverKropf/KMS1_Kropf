@@ -28,7 +28,7 @@ namespace KMS1_Kropf
         {
             InitializeComponent();
 
-            headLabel.Content = strHeader;
+            headerLabel.Content = strHeader;
             moneyTransfer = cash;
 
             string[] data = accountSortedDict[accountID].Split(',');

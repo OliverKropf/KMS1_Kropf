@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KMS1_Kropf"
         mc:Ignorable="d"
         Title="GoldIsMoney-Bank" 
         Height="700" 
@@ -29,7 +28,8 @@
                   Margin="15,50,0,0" 
                   VerticalAlignment="Top" 
                   Name="myListView"
-                  SelectionChanged="myListView_SelectionChanged">
+                  SelectionChanged="myListView_SelectionChanged"
+                  MouseDoubleClick="detailBtn_Click">
 
             <ListView.View>
                 <GridView >

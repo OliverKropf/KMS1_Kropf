@@ -18,14 +18,14 @@
         
 <!-- Labels for displaying data -->
         
-        <Label Name="headLabel" 
+        <Label Name="headerLabel" 
                Content="" 
                Margin="10" 
                FontSize="14" 
                FontFamily="Adobe Gothic Std B" 
                Background="#FFDDECF1"/>
         
-        <Label Name="bLabel" 
+        <Label 
                Content="Konto-Stand: " 
                FontSize="18" 
                Margin="-200,400,10,10" 

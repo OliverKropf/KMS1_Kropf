@@ -52,8 +52,12 @@ namespace KMS1_Kropf
         }
         private void listViewIBAN_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            saveBtn.IsEnabled= true;
-            AccountingLogicWithBalanceChange();
+            //same coverage as in detailBtn_Click-Event
+            if (sender != null) 
+            {
+                saveBtn.IsEnabled = true;
+                AccountingLogicWithBalanceChange();
+            }
         }
 
         /// <summary>

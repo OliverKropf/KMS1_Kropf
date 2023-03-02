@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -94,11 +95,17 @@ namespace KMS1_Kropf
 
         private void detailBtn_Click(object sender, RoutedEventArgs e)
         {
+
             Customer selectedItem = (Customer)myListView.SelectedItem;
-            AccountWindow accWindow = new AccountWindow("Konto-ID: " + selectedItem.ID + "\n" + "Name: " + selectedItem.Name,
-                                                      this, accountSortedDict, selectedItem.ID, dataTransferArray);
-            accWindow.Show();
-            this.Hide();
+
+            //coverage for ListView(ID, Name are clickable even if you didn't read data)
+            if(selectedItem != null)
+            {
+                AccountWindow accWindow = new AccountWindow("Konto-ID: " + selectedItem.ID + "\n" + "Name: " + selectedItem.Name,
+                                                          this, accountSortedDict, selectedItem.ID, dataTransferArray);
+                accWindow.Show();
+                this.Hide();
+            }
         }
 
         private void myListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -32,7 +32,13 @@
                   MouseDoubleClick="detailBtn_Click">
 
             <ListView.View>
-                <GridView >
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    
                     <GridViewColumn Header="Kunden-ID" 
                                     DisplayMemberBinding="{Binding ID}" 
                                     Width="140"/>

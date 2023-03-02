@@ -63,6 +63,12 @@
 
             <ListView.View>
                 <GridView >
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    
                     <GridViewColumn Header="IBAN" 
                                     Width="170"/>
                 </GridView>
@@ -78,7 +84,14 @@
                   Name="listViewSending">
 
             <ListView.View>
-                <GridView >
+                <GridView>
+                    
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    
                     <GridViewColumn Header="Kontonummer" 
                                     DisplayMemberBinding="{Binding accNumber}" 
                                     Width="170"/>
@@ -108,7 +121,14 @@
                   Name="listViewRecieving">
 
             <ListView.View>
-                <GridView >
+                <GridView>
+                    
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    
                     <GridViewColumn Header="Kontonummer" 
                                     DisplayMemberBinding="{Binding accNumber}" 
                                     Width="170"/>
